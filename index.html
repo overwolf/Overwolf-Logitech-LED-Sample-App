@@ -1,0 +1,36 @@
+<html>
+<body>
+    <div style:"display:inline-block;width:100%">
+        <textarea style="width:90%">Initialization code:
+    overwolf.logitech.led.init(function(info){console.log("Initialized: " + info)});</textarea>
+    </div>
+    </br>
+    <div style="display:inline-block;width:100%">
+        <textarea style="width:90%">Flash keyboard:
+    overwolf.logitech.led.flashLighting(30, 50, 90, 3000, 200, function(info){console.log("Flash: " + info.result)});</textarea>
+        <button onclick='flashDevices()'>Flash</button>
+    </div>
+    <div style="display:inline-block;width:100%">
+        <textarea style="width:90%;height:200px">Light specific keys:
+    overwolf.logitech.led.setLightingForKeyWithKeyName(overwolf.logitech.led.enums.KeyboardNames.W,100, 0, 0,
+        function(info){console.log("Light W: " + info.status)});
+
+    overwolf.logitech.led.setLightingForKeyWithKeyName(overwolf.logitech.led.enums.KeyboardNames.A,100, 0, 0,
+        function(info){console.log("Light A: " + info.status)});
+
+    overwolf.logitech.led.setLightingForKeyWithKeyName(overwolf.logitech.led.enums.KeyboardNames.S,100, 0, 0, 
+        function(info){console.log("Light S: " + info.status)});
+
+    overwolf.logitech.led.setLightingForKeyWithKeyName(overwolf.logitech.led.enums.KeyboardNames.D,100, 0, 0, 
+        function(info){console.log("Light D: " + info.status)});</textarea>
+<button onclick='gamingKeyboard()'>Gaming</button>
+    </div>
+    <div style="display:inline-block;width:100%">
+        <textarea style="width:90%">Display image (must be 21x6):
+    overwolf.logitech.led.setLightingFromBitmap("img.png", function(info){console.log(info)});</textarea>
+        <button onclick='showImage()'>Image</button>
+    </div>
+    <script src="main.js">
+    </script>
+</body>
+</html>
